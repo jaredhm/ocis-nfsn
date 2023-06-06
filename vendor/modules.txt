@@ -1841,7 +1841,7 @@ go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
 ## explicit; go 1.19
 go.opentelemetry.io/otel/metric
 go.opentelemetry.io/otel/metric/embedded
-# go.opentelemetry.io/otel/sdk v1.15.1
+# go.opentelemetry.io/otel/sdk v1.15.1 => go.opentelemetry.io/otel/sdk v1.16.0
 ## explicit; go 1.19
 go.opentelemetry.io/otel/sdk
 go.opentelemetry.io/otel/sdk/instrumentation
@@ -2164,3 +2164,4 @@ stash.kopano.io/kgol/oidc-go
 ## explicit; go 1.13
 stash.kopano.io/kgol/rndm
 # github.com/cs3org/go-cs3apis => github.com/2403905/go-cs3apis v0.0.0-20230517122726-727045414fd1
+# go.opentelemetry.io/otel/sdk => go.opentelemetry.io/otel/sdk v1.16.0

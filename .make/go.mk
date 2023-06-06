@@ -2,6 +2,7 @@ OCIS_REPO := github.com/owncloud/ocis/v2
 IMPORT := ($OCIS_REPO)/$(NAME)
 BIN := bin
 DIST := dist
+GO_BUILD_FLAGS := CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64
 
 ifeq ($(OS), Windows_NT)
 	EXECUTABLE := $(NAME).exe
@@ -99,10 +100,10 @@ build: $(BIN)/$(EXECUTABLE)
 build-debug: $(BIN)/$(EXECUTABLE)-debug
 
 $(BIN)/$(EXECUTABLE): $(SOURCES)
-	$(GOBUILD) -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' -o $@ ./cmd/$(NAME)
+	$(GO_BUILD_FLAGS) $(GOBUILD) -v -tags '$(TAGS)' -ldflags '$(LDFLAGS)' -o $@ ./cmd/$(NAME)
 
 $(BIN)/$(EXECUTABLE)-debug: $(SOURCES)
-	$(GOBUILD) -v -tags '$(TAGS)' -ldflags '$(DEBUG_LDFLAGS)' -gcflags '$(GCFLAGS)' -o $@ ./cmd/$(NAME)
+	$(GO_BUILD_FLAGS) $(GOBUILD)-v -tags '$(TAGS)' -ldflags '$(DEBUG_LDFLAGS)' -gcflags '$(GCFLAGS)' -o $@ ./cmd/$(NAME)
 
 .PHONY: watch
 watch: $(REFLEX)

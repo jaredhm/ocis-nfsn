@@ -328,3 +328,4 @@ require (
 )
 
 replace github.com/cs3org/go-cs3apis => github.com/2403905/go-cs3apis v0.0.0-20230517122726-727045414fd1
+replace go.opentelemetry.io/otel/sdk => go.opentelemetry.io/otel/sdk v1.16.0

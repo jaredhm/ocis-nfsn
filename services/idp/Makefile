@@ -54,18 +54,18 @@ assets/identifier/static/favicon.ico:
 pnpm-build: node_modules
 	#pnpm lint #TODO: activate
 	#pnpm test #TODO: activate
-	pnpm build
+	npx --no pnpm build
 
 .PHONY: node_modules
 node_modules:
-	pnpm install
+	npx --no pnpm install
 
 ############ licenses ############
 .PHONY: ci-node-check-licenses
 ci-node-check-licenses: node_modules
-	pnpm licenses:check
+	npx --no pnpm licenses:check
 
 .PHONY: ci-node-save-licenses
 ci-node-save-licenses: node_modules
-	pnpm licenses:csv
-	pnpm licenses:save
+	npx --no pnpm licenses:csv
+	npx --no pnpm licenses:save
